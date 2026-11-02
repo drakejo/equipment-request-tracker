@@ -67,6 +67,15 @@
           </div>
 
           <div class="field">
+            <label for="priority">Priority</label>
+            <select id="priority" name="priority" required>
+              <option>Low</option>
+              <option selected>Normal</option>
+              <option>High</option>
+            </select>
+          </div>
+
+          <div class="field">
             <label for="reason">Business reason</label>
             <textarea
               id="reason"
@@ -94,6 +103,21 @@
           <p id="request-count" class="request-count">0 requests</p>
         </div>
 
+        <div class="field" style="max-width: 19rem;">
+          <label for="priority-filter">Filter by priority</label>
+          <select id="priority-filter" name="priorityFilter">
+            <option value="All">All</option>
+            <option value="High">High</option>
+            <option value="Normal">Normal</option>
+            <option value="Low">Low</option>
+          </select>
+        </div>
+
+        <div id="filter-empty-state" class="empty-state" hidden>
+          <h3>No requests match this priority</h3>
+          <p>Try another priority or select All to see every saved request.</p>
+        </div>
+
         <div id="empty-state" class="empty-state">
           <h3>No requests yet</h3>
           <p>Add the first equipment request using the form.</p>
@@ -107,6 +131,7 @@
                 <th scope="col">Requester</th>
                 <th scope="col">Department</th>
                 <th scope="col">Equipment</th>
+                <th scope="col">Priority</th>
                 <th scope="col">Needed by</th>
                 <th scope="col">Business reason</th>
                 <th scope="col">Submitted</th>
